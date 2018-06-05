@@ -8,18 +8,18 @@ pipeline {
         stage('Hello') {
           steps {
             echo 'Hello World'
-            sh 'java -version'
+            sh '''java -version
             echo "Hello ${MY_NAME}!"
-            echo "Hello ${params.Name}!"
-            echo "Hello ${BUDDY_NAME}!"
+            # echo "Hello ${params.Name}!"
+            echo "Hello ${BUDDY_NAME}!"'''
             sleep 1
           }
         }
         stage('Dont say Hello') {
           steps {
             echo 'See Yaa'
-            echo "${TEST_USER_USR}"
-            echo "${TEST_USER_PSW}"
+            sh '''echo "${TEST_USER_USR}"
+            echo "${TEST_USER_PSW}"'''
           }
         }
       }
