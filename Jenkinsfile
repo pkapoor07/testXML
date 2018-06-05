@@ -18,7 +18,7 @@ echo "Hello ${BUDDY_NAME}!"'''
           steps {
             echo 'See Yaa'
             sh '''echo "${TEST_USER_USR}"
-echo "${TEST_USER_PSW}'''
+            echo "${TEST_USER_PSW}"'''
           }
         }
       }
