@@ -8,7 +8,9 @@ pipeline {
         stage('Hello') {
           steps {
             echo 'Hello World'
-            sh 'java -version'
+            sh '''java -version
+echo "Hello ${MY_NAME}!"
+echo "Hello ${BUDDY_NAME}!"'''
             sleep 1
           }
         }
