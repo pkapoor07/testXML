@@ -18,4 +18,8 @@ pipeline {
       }
     }
   }
+  environment {
+    MY_NAME = 'Puneet'
+    BUDDY_NAME = 'Anthony'
+  }
 }
