@@ -9,8 +9,9 @@ pipeline {
           steps {
             echo 'Hello World'
             sh '''java -version
-echo "Hello ${MY_NAME}!"
-echo "Hello ${BUDDY_NAME}!"'''
+            echo "Hello ${MY_NAME}!"
+            echo "Hello ${params.Name}!"
+            echo "Hello ${BUDDY_NAME}!"'''
             sleep 1
           }
         }
@@ -28,5 +29,8 @@ echo "Hello ${BUDDY_NAME}!"'''
     MY_NAME = 'Puneet'
     BUDDY_NAME = 'Anthony'
     TEST_USER = credentials('test-user')
+  }
+  parameters {
+    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
