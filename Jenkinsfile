@@ -17,6 +17,8 @@ echo "Hello ${BUDDY_NAME}!"'''
         stage('Dont say Hello') {
           steps {
             echo 'See Yaa'
+            sh '''echo "${TEST_USER_USR}"
+echo "${TEST_USER_PSW}'''
           }
         }
       }
@@ -25,5 +27,6 @@ echo "Hello ${BUDDY_NAME}!"'''
   environment {
     MY_NAME = 'Puneet'
     BUDDY_NAME = 'Anthony'
+    TEST_USER = credentials('test-user')
   }
 }
